@@ -29,3 +29,21 @@ export function applyTheme(theme: Theme) {
   }
   window.dispatchEvent(new Event(THEME_EVENT));
 }
+
+/**
+ * Puts the stored choice back on <html>. React drops the attribute if it
+ * ever rebuilds the page from the root (a failed hydration), so ThemeSync
+ * calls this once it has mounted.
+ */
+export function restoreTheme() {
+  let stored: string | null = null;
+  try {
+    stored = localStorage.getItem(THEME_KEY);
+  } catch {
+    return;
+  }
+  if ((stored === "light" || stored === "dark") && document.documentElement.dataset.theme !== stored) {
+    document.documentElement.dataset.theme = stored;
+    window.dispatchEvent(new Event(THEME_EVENT));
+  }
+}
