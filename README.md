@@ -44,11 +44,14 @@ Lucide's, kept apart (`Icon/extra-icons.ts`) until the design system has them.
 
 ## Content
 
-The copy is the design system's sample: services, standards, timelines and
-the addresses `hola@offby1.cc` and `security@offby1.cc` are **provisional**
-until the real offering replaces them. The legal pages (`/aviso-legal/`,
-`/privacidad/`, `/cookies/` and their English pages) say their text is
-pending.
+The copy is the design system's sample: services, standards and timelines
+are **provisional** until the real offering replaces them.
+
+The site has no contact address: the form is the only way in, for security
+reports too (`security.txt` points at it). The owner's details
+(`src/content/owner.ts`) appear only in the legal notice and the privacy
+policy, as the law requires, and both are `noindex` and out of the sitemap.
+The site sets no cookies; the cookies page says so.
 
 ## Security headers
 

@@ -6,6 +6,20 @@ export type Lang = "es" | "en";
 
 export type PageKey = "legal" | "privacy" | "cookies" | "disclosure";
 
+export interface Section {
+  heading?: string;
+  paragraphs?: string[];
+  items?: string[];
+}
+
+export interface TextPageContent {
+  path: string;
+  title: string;
+  /** Kept out of search engines and the sitemap: it shows the owner's address. */
+  noindex?: boolean;
+  sections: Section[];
+}
+
 export interface Link {
   label: string;
   href: string;
@@ -75,14 +89,13 @@ export interface Content {
   };
   footer: {
     tagline: string;
-    email: string;
     columns: { title: string; links: Link[] }[];
     legal: Link[];
   };
   pages: {
     back: Link;
-    /** Shown where a page has no body yet. */
-    pending: string;
-    list: Record<PageKey, { path: string; title: string; body?: string[] }>;
+    /** "Last updated", before the date. */
+    updated: string;
+    list: Record<PageKey, TextPageContent>;
   };
 }

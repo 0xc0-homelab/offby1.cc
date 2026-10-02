@@ -27,6 +27,8 @@ export function pageMetadata(lang: Lang, page?: PageKey): Metadata {
       locale: lang === "en" ? "en_GB" : "es_ES",
     },
     icons: { icon: "/favicon.svg" },
+    // The pages that show the owner's address stay out of search engines.
+    ...(page && c.pages.list[page].noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
