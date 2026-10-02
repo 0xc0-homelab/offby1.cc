@@ -8,7 +8,7 @@ export const es: Content = {
   meta: {
     title: "offby1 — Auditoría y consultoría de ciberseguridad",
     description:
-      "Auditorías de seguridad, pruebas de intrusión y consultoría para equipos que no pueden permitirse un error de uno.",
+      "Auditorías de seguridad, pentesting y consultoría para equipos que no pueden permitirse ni un solo fallo.",
   },
   nav: {
     links: [
@@ -17,15 +17,15 @@ export const es: Content = {
       { label: "Contacto", href: "#contacto" },
     ],
     cta: { label: "Solicitar auditoría", href: "#contacto" },
-    theme: { label: "Tema", system: "Como el sistema", light: "Claro", dark: "Oscuro" },
+    theme: { label: "Tema", system: "Según el sistema", light: "Claro", dark: "Oscuro" },
   },
   hero: {
     eyebrow: "Auditoría y consultoría de ciberseguridad",
-    title: ["Encontramos el fallo ", "antes que ellos."],
-    lede: "Auditorías de seguridad, pruebas de intrusión y consultoría para equipos que no pueden permitirse un error de uno.",
+    title: ["Encontramos el fallo ", "antes que los atacantes."],
+    lede: "Auditorías de seguridad, pentesting y consultoría para equipos que no pueden permitirse ni un solo fallo.",
     primary: { label: "Solicitar auditoría", href: "#contacto" },
     secondary: { label: "Ver servicios", href: "#servicios" },
-    note: "Alcance cerrado y NDA antes de empezar.",
+    note: "Alcance acordado y NDA firmado antes de empezar.",
     terminal: {
       title: "audit.log",
       status: "En curso",
@@ -35,7 +35,7 @@ export const es: Content = {
         { kind: "out", text: "214 endpoints · 3 roles · 2 entornos" },
         { kind: "finding", level: "critical", text: "Inyección SQL en /buscar?q=" },
         { kind: "finding", level: "high", text: "IDOR en /api/v2/facturas/{id}" },
-        { kind: "finding", level: "medium", text: "CSP ausente en /panel" },
+        { kind: "finding", level: "medium", text: "Sin CSP en /panel" },
         { kind: "finding", level: "low", text: "Versión de servidor expuesta" },
         { kind: "ok", text: "informe priorizado · 4 hallazgos" },
       ],
@@ -45,24 +45,24 @@ export const es: Content = {
     id: "servicios",
     eyebrow: "Servicios",
     title: "Qué hacemos",
-    lede: "Tres formas de trabajar, con el mismo resultado: sabes qué está mal, cuánto importa y cómo se arregla.",
+    lede: "Tres servicios con un mismo resultado: saber qué falla, cuánto importa y cómo arreglarlo.",
     cards: [
       {
         icon: "shield-check",
         title: "Auditoría de seguridad",
         description: "Revisamos infraestructura, código y configuración, y entregamos un informe priorizado por riesgo.",
-        items: ["Revisión de arquitectura", "Hardening de servidores y nube", "Análisis de código fuente"],
+        items: ["Revisión de arquitectura", "Bastionado de servidores y nube", "Análisis de código fuente"],
       },
       {
         icon: "scan-search",
-        title: "Pruebas de intrusión",
-        description: "Atacamos tu aplicación como lo haría alguien de fuera, dentro de un alcance cerrado y por escrito.",
-        items: ["Aplicaciones web y APIs", "Infraestructura expuesta", "Retest de lo remediado"],
+        title: "Pentesting",
+        description: "Atacamos tus sistemas como lo haría un atacante real, dentro de un alcance acordado por escrito.",
+        items: ["Aplicaciones web y APIs", "Infraestructura expuesta", "Verificación de las correcciones"],
       },
       {
         icon: "clipboard-check",
         title: "Consultoría y cumplimiento",
-        description: "Te acompañamos para llegar a la norma que aplica y mantenerla sin frenar a tu equipo.",
+        description: "Te ayudamos a cumplir la normativa que te aplica y a mantenerla sin frenar a tu equipo.",
         items: ["ENS e ISO 27001", "NIS2 y DORA", "Políticas y respuesta a incidentes"],
       },
     ],
@@ -71,22 +71,22 @@ export const es: Content = {
     id: "metodo",
     eyebrow: "Método",
     title: "Cómo trabajamos",
-    lede: "Cuatro pasos, siempre los mismos. Sabes en cada momento qué estamos probando y qué viene después.",
+    lede: "Cuatro pasos, siempre los mismos. En todo momento sabes qué estamos probando y qué viene después.",
     steps: [
-      { title: "Alcance", body: "Acordamos qué se prueba, cuándo y con qué límites. Firmamos el NDA antes de tocar nada." },
-      { title: "Prueba", body: "Auditamos con herramientas y a mano. Si algo es crítico, te avisamos ese mismo día." },
-      { title: "Informe", body: "Cada hallazgo con su severidad, su impacto en el negocio y cómo arreglarlo, de mayor a menor." },
-      { title: "Retest", body: "Cuando lo hayas corregido, volvemos a probarlo y lo marcamos como remediado." },
+      { title: "Alcance", body: "Acordamos qué se prueba, cuándo y con qué límites, y firmamos el NDA antes de tocar nada." },
+      { title: "Pruebas", body: "Combinamos herramientas automáticas y revisión manual. Si encontramos algo crítico, te avisamos el mismo día." },
+      { title: "Informe", body: "Cada hallazgo, ordenado por severidad, con su impacto en el negocio y cómo corregirlo." },
+      { title: "Verificación", body: "Cuando lo corrijas, volvemos a probarlo y confirmamos que está resuelto." },
     ],
     report: {
       label: "Ejemplo de informe",
       title: "Resumen de hallazgos",
       columns: ["Severidad", "Hallazgo", "Estado"],
       findings: [
-        { level: "critical", title: "Inyección SQL en el buscador", status: "Remediado", remediated: true },
-        { level: "high", title: "IDOR en la API de facturas", status: "Remediado", remediated: true },
-        { level: "medium", title: "CSP ausente en el panel", status: "En curso" },
-        { level: "low", title: "Versión de servidor expuesta", status: "Aceptado" },
+        { level: "critical", title: "Inyección SQL en el buscador", status: "Corregido", remediated: true },
+        { level: "high", title: "IDOR en la API de facturas", status: "Corregido", remediated: true },
+        { level: "medium", title: "Sin CSP en el panel", status: "En curso" },
+        { level: "low", title: "Versión de servidor expuesta", status: "Asumido" },
       ],
     },
   },
@@ -94,7 +94,7 @@ export const es: Content = {
     id: "contacto",
     eyebrow: "Contacto",
     title: "Cuéntanos qué necesitas",
-    lede: "Te respondemos con una propuesta de alcance y un plazo. Sin compromiso y sin llamadas de venta.",
+    lede: "Te respondemos con una propuesta de alcance y plazos. Sin compromiso y sin llamadas comerciales.",
     form: {
       name: "Nombre",
       email: "Email corporativo",
@@ -102,15 +102,15 @@ export const es: Content = {
       company: "Empresa",
       need: "¿Qué necesitas?",
       pick: "Elige una opción",
-      options: ["Auditoría de seguridad", "Pruebas de intrusión", "Consultoría y cumplimiento", "Informar de un fallo de seguridad", "Otra cosa"],
+      options: ["Auditoría de seguridad", "Pentesting", "Consultoría y cumplimiento", "Informar de un fallo de seguridad", "Otro"],
       message: "Cuéntanos el contexto",
-      messageHint: "Alcance aproximado, plazos, normativa que aplica. Nada confidencial todavía.",
+      messageHint: "Alcance aproximado, plazos y normativa aplicable. No incluyas nada confidencial todavía.",
       optional: "(opcional)",
       consent: ["Acepto la ", { label: "política de privacidad", href: "/privacidad/" }, " y que offby1 me contacte sobre esta solicitud."],
       submit: "Solicitar propuesta",
-      sending: "Enviando",
-      note: "Respondemos en menos de 24 horas laborables.",
-      sent: "Recibido. Te escribimos en menos de 24 horas laborables.",
+      sending: "Enviando…",
+      note: "Respondemos en un día laborable como máximo.",
+      sent: "Recibido. Te escribimos en un día laborable como máximo.",
       failed: "No hemos podido enviarlo. Inténtalo de nuevo en unos minutos.",
       errors: {
         required: "Este campo es obligatorio.",
@@ -121,13 +121,13 @@ export const es: Content = {
     },
   },
   footer: {
-    tagline: "Auditoría y consultoría de ciberseguridad para equipos que no pueden permitirse un error de uno.",
+    tagline: "Auditoría y consultoría de ciberseguridad para equipos que no pueden permitirse ni un solo fallo.",
     columns: [
       {
         title: "Servicios",
         links: [
           { label: "Auditoría de seguridad", href: "#servicios" },
-          { label: "Pruebas de intrusión", href: "#servicios" },
+          { label: "Pentesting", href: "#servicios" },
           { label: "Consultoría y cumplimiento", href: "#servicios" },
         ],
       },
@@ -176,7 +176,7 @@ export const es: Content = {
           {
             heading: "Qué es esta web",
             paragraphs: [
-              "offby1.cc presenta los servicios de auditoría de seguridad, pruebas de intrusión y consultoría de offby1, y permite pedir una propuesta a través del formulario de contacto. Usarla no supone ningún contrato: cada encargo se acuerda por escrito, con su alcance.",
+              "offby1.cc presenta los servicios de auditoría de seguridad, pentesting y consultoría de offby1, y permite pedir una propuesta a través del formulario de contacto. Usarla no supone ningún contrato: cada encargo se acuerda por escrito, con su alcance.",
             ],
           },
           {
@@ -215,7 +215,7 @@ export const es: Content = {
           {
             heading: "Qué datos tratamos",
             items: [
-              "Si usas el formulario de contacto: tu nombre y tu email y, si los indicas, tu empresa, el servicio que te interesa y el contexto que nos cuentes.",
+              "Si usas el formulario de contacto: tu nombre, tu email y, si los indicas, tu empresa, el servicio que te interesa y el contexto que nos cuentes.",
               "De cada visita: la dirección IP, la fecha y hora, la página pedida y el navegador, en los registros del servidor.",
             ],
           },
@@ -269,7 +269,7 @@ export const es: Content = {
           {
             heading: "Lo único que guarda tu navegador",
             paragraphs: [
-              "Si eliges el tema claro u oscuro, tu navegador guarda esa preferencia en su almacenamiento local (la clave offby1-theme) para recordarla en tu próxima visita. Solo se guarda si la eliges, nunca se envía a nuestro servidor y desaparece si vuelves a «Como el sistema» o borras los datos del sitio.",
+              "Si eliges el tema claro u oscuro, tu navegador guarda esa preferencia en su almacenamiento local (la clave offby1-theme) para recordarla en tu próxima visita. Solo se guarda si la eliges, nunca se envía a nuestro servidor y desaparece si vuelves a «Según el sistema» o borras los datos del sitio.",
             ],
           },
           {
@@ -287,8 +287,8 @@ export const es: Content = {
           {
             paragraphs: [
               "Si has encontrado un fallo de seguridad en offby1.cc o en cualquier sistema nuestro, queremos saberlo.",
-              "Usa el formulario de contacto y elige «Informar de un fallo de seguridad». Cuéntanos qué has visto y cómo reproducirlo. Te respondemos en menos de 3 días laborables y te contamos cómo vamos.",
-              "No accedas a datos de otras personas, no degrades el servicio y danos un plazo razonable para corregirlo antes de publicarlo. Si lo haces así, no emprenderemos ninguna acción contra ti.",
+              "Usa el formulario de contacto y elige «Informar de un fallo de seguridad». Cuéntanos qué has visto y cómo reproducirlo. Te respondemos en 3 días laborables como máximo y te mantenemos al tanto.",
+              "No accedas a datos de otras personas, no degrades el servicio y danos un plazo razonable para corregirlo antes de publicarlo. Si lo haces así, no tomaremos ninguna acción legal contra ti.",
             ],
           },
         ],
