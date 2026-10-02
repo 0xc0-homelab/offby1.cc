@@ -1,3 +1,4 @@
+import { OWNER } from "./owner";
 import type { Content } from "./types";
 
 // Sample copy from the design system: provisional until the real offering
@@ -100,7 +101,7 @@ export const en: Content = {
       company: "Company",
       need: "What do you need?",
       pick: "Choose one",
-      options: ["Security audit", "Penetration testing", "Consulting & compliance", "Something else"],
+      options: ["Security audit", "Penetration testing", "Consulting & compliance", "Report a security issue", "Something else"],
       message: "Tell us the context",
       messageHint: "Rough scope, timelines, regulations that apply. Nothing confidential yet.",
       optional: "(optional)",
@@ -109,7 +110,7 @@ export const en: Content = {
       sending: "Sending",
       note: "We reply within one business day.",
       sent: "Received. We'll write back within one business day.",
-      failed: "We couldn't send it. Try again, or write to hola@offby1.cc.",
+      failed: "We couldn't send it. Try again in a few minutes.",
       errors: {
         required: "This field is required.",
         email: "Check the format: name@company.com",
@@ -120,7 +121,6 @@ export const en: Content = {
   },
   footer: {
     tagline: "Cybersecurity audits and consulting for teams that can't afford to be off by one.",
-    email: "hola@offby1.cc",
     columns: [
       {
         title: "Services",
@@ -153,18 +153,143 @@ export const en: Content = {
   },
   pages: {
     back: { label: "Back to home", href: "/en/" },
-    pending: "We're finishing this page. In the meantime, write to hola@offby1.cc with any question.",
+    updated: "Last updated",
     list: {
-      legal: { path: "/en/legal/", title: "Legal notice" },
-      privacy: { path: "/en/privacy/", title: "Privacy policy" },
-      cookies: { path: "/en/cookies/", title: "Cookies" },
+      legal: {
+        path: "/en/legal/",
+        title: "Legal notice",
+        noindex: true,
+        sections: [
+          {
+            heading: "Owner",
+            paragraphs: [
+              "As required by article 10 of Spain's Law 34/2002 on information society services and e-commerce (LSSI-CE), these are the details of the owner of offby1.cc:",
+            ],
+            items: [
+              `Owner: ${OWNER.name}`,
+              `Tax ID (NIF): ${OWNER.taxId}`,
+              `Address: ${OWNER.addressEn}`,
+              `Email: ${OWNER.email}`,
+            ],
+          },
+          {
+            heading: "What this site is",
+            paragraphs: [
+              "offby1.cc presents offby1's security audit, penetration testing and consulting services, and lets you request a proposal through the contact form. Using it doesn't create any contract: every engagement is agreed in writing, with its scope.",
+            ],
+          },
+          {
+            heading: "Content",
+            paragraphs: [
+              "We keep the information accurate and current, but it's for guidance and may change without notice. The audit examples on the site (logs, findings, reports) are illustrative and don't belong to any client.",
+              "When we link to third-party sites, we aren't responsible for what they publish.",
+            ],
+          },
+          {
+            heading: "Intellectual property",
+            paragraphs: [
+              "offby1's texts, design and logo belong to their owner. You may quote them with attribution; for any other use, ask first. The Instrument Sans and JetBrains Mono typefaces are used under the SIL Open Font License.",
+            ],
+          },
+          {
+            heading: "Governing law",
+            paragraphs: ["This legal notice is governed by Spanish law."],
+          },
+        ],
+      },
+      privacy: {
+        path: "/en/privacy/",
+        title: "Privacy policy",
+        noindex: true,
+        sections: [
+          {
+            heading: "Controller",
+            items: [
+              `Controller: ${OWNER.name}`,
+              `Tax ID (NIF): ${OWNER.taxId}`,
+              `Address: ${OWNER.addressEn}`,
+              `Email: ${OWNER.email}`,
+            ],
+          },
+          {
+            heading: "What data we process",
+            items: [
+              "If you use the contact form: your name and email and, if you give them, your company, the service you're interested in and the context you share.",
+              "For every visit: the IP address, date and time, page requested and browser, in the server's logs.",
+            ],
+          },
+          {
+            heading: "Why, and on what basis",
+            items: [
+              "To answer your request and, if you ask, prepare a proposal. The basis is your consent (art. 6(1)(a) GDPR), given when you send the form, which you can withdraw at any time.",
+              "To keep the site secure and running: detecting abuse and attacks. The basis is our legitimate interest (art. 6(1)(f) GDPR).",
+            ],
+            paragraphs: [
+              "We don't use your data for advertising, we don't build profiles, and we don't make automated decisions about you.",
+            ],
+          },
+          {
+            heading: "How long",
+            items: [
+              "Form data: as long as needed to handle your request, and at most 12 months after our last contact. If we agree an engagement, as long as the law requires.",
+              "Server logs: 30 days. System backups may keep them for up to 6 months.",
+            ],
+          },
+          {
+            heading: "Who else processes it",
+            items: [
+              "Cloudflare, Inc. serves the site and protects it from attacks: visits go through its network. It may process data outside the European Union, under the EU-US Data Privacy Framework and standard contractual clauses.",
+              "Hetzner Online GmbH hosts our servers, in data centres in the European Union.",
+            ],
+            paragraphs: ["We don't share your data with anyone else, unless the law requires it."],
+          },
+          {
+            heading: "Your rights",
+            paragraphs: [
+              `You can ask to access, correct, erase, restrict or port your data, object to its processing, and withdraw your consent by writing to ${OWNER.email} from the address you contacted us with.`,
+              "If you think we haven't handled your data properly, you can complain to the Spanish Data Protection Agency (aepd.es).",
+            ],
+          },
+          {
+            heading: "Cookies",
+            paragraphs: ["This site uses no cookies. The details are on the cookies page."],
+          },
+        ],
+      },
+      cookies: {
+        path: "/en/cookies/",
+        title: "Cookies",
+        sections: [
+          {
+            paragraphs: [
+              "This site sets no cookies: none of its own and none from third parties, no analytics and no advertising. That's why we show no banner and ask for no consent.",
+            ],
+          },
+          {
+            heading: "The one thing your browser keeps",
+            paragraphs: [
+              "If you choose the light or dark theme, your browser keeps that preference in its local storage (the key offby1-theme) to remember it next time. It's only stored if you choose it, it's never sent to our server, and it goes away if you switch back to “Match the system” or clear the site's data.",
+            ],
+          },
+          {
+            heading: "If this changes",
+            paragraphs: [
+              "If we ever use cookies, we'll update this page and ask for your permission before setting any that isn't strictly necessary.",
+            ],
+          },
+        ],
+      },
       disclosure: {
         path: "/en/disclosure/",
         title: "Responsible disclosure",
-        body: [
-          "If you've found a security flaw in offby1.cc or any system of ours, we want to know.",
-          "Write to security@offby1.cc with what you saw and how to reproduce it. We'll reply within 3 business days and keep you posted.",
-          "Don't access other people's data, don't degrade the service, and give us reasonable time to fix it before you publish. If you do that, we won't take any action against you.",
+        sections: [
+          {
+            paragraphs: [
+              "If you've found a security flaw in offby1.cc or any system of ours, we want to know.",
+              "Use the contact form and choose “Report a security issue”. Tell us what you saw and how to reproduce it. We'll reply within 3 business days and keep you posted.",
+              "Don't access other people's data, don't degrade the service, and give us reasonable time to fix it before you publish. If you do that, we won't take any action against you.",
+            ],
+          },
         ],
       },
     },

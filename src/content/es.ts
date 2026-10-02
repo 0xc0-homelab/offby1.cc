@@ -1,3 +1,4 @@
+import { OWNER } from "./owner";
 import type { Content } from "./types";
 
 // Sample copy from the design system: provisional until the real offering
@@ -100,7 +101,7 @@ export const es: Content = {
       company: "Empresa",
       need: "¿Qué necesitas?",
       pick: "Elige una opción",
-      options: ["Auditoría de seguridad", "Pruebas de intrusión", "Consultoría y cumplimiento", "Otra cosa"],
+      options: ["Auditoría de seguridad", "Pruebas de intrusión", "Consultoría y cumplimiento", "Informar de un fallo de seguridad", "Otra cosa"],
       message: "Cuéntanos el contexto",
       messageHint: "Alcance aproximado, plazos, normativa que aplica. Nada confidencial todavía.",
       optional: "(opcional)",
@@ -109,7 +110,7 @@ export const es: Content = {
       sending: "Enviando",
       note: "Respondemos en menos de 24 horas laborables.",
       sent: "Recibido. Te escribimos en menos de 24 horas laborables.",
-      failed: "No hemos podido enviarlo. Inténtalo de nuevo o escríbenos a hola@offby1.cc.",
+      failed: "No hemos podido enviarlo. Inténtalo de nuevo en unos minutos.",
       errors: {
         required: "Este campo es obligatorio.",
         email: "Revisa el formato: nombre@empresa.com",
@@ -120,7 +121,6 @@ export const es: Content = {
   },
   footer: {
     tagline: "Auditoría y consultoría de ciberseguridad para equipos que no pueden permitirse un error de uno.",
-    email: "hola@offby1.cc",
     columns: [
       {
         title: "Servicios",
@@ -153,18 +153,143 @@ export const es: Content = {
   },
   pages: {
     back: { label: "Volver al inicio", href: "/" },
-    pending: "Estamos terminando este texto. Mientras tanto, escríbenos a hola@offby1.cc con cualquier duda.",
+    updated: "Última actualización",
     list: {
-      legal: { path: "/aviso-legal/", title: "Aviso legal" },
-      privacy: { path: "/privacidad/", title: "Política de privacidad" },
-      cookies: { path: "/cookies/", title: "Cookies" },
+      legal: {
+        path: "/aviso-legal/",
+        title: "Aviso legal",
+        noindex: true,
+        sections: [
+          {
+            heading: "Titular",
+            paragraphs: [
+              "En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), estos son los datos del titular de offby1.cc:",
+            ],
+            items: [
+              `Titular: ${OWNER.name}`,
+              `NIF: ${OWNER.taxId}`,
+              `Domicilio: ${OWNER.address}`,
+              `Correo electrónico: ${OWNER.email}`,
+            ],
+          },
+          {
+            heading: "Qué es esta web",
+            paragraphs: [
+              "offby1.cc presenta los servicios de auditoría de seguridad, pruebas de intrusión y consultoría de offby1, y permite pedir una propuesta a través del formulario de contacto. Usarla no supone ningún contrato: cada encargo se acuerda por escrito, con su alcance.",
+            ],
+          },
+          {
+            heading: "Contenido",
+            paragraphs: [
+              "Cuidamos que la información sea correcta y esté al día, pero es orientativa y puede cambiar sin aviso. Los ejemplos de auditoría que aparecen en la web (registros, hallazgos, informes) son ilustrativos y no corresponden a ningún cliente.",
+              "Si enlazamos a webs de terceros, no respondemos de lo que publiquen.",
+            ],
+          },
+          {
+            heading: "Propiedad intelectual",
+            paragraphs: [
+              "Los textos, el diseño y el logotipo de offby1 son de su titular. Puedes citarlos indicando la fuente; para cualquier otro uso, pide permiso antes. Las tipografías Instrument Sans y JetBrains Mono se usan bajo la licencia SIL Open Font License.",
+            ],
+          },
+          {
+            heading: "Legislación aplicable",
+            paragraphs: ["Este aviso legal se rige por la legislación española."],
+          },
+        ],
+      },
+      privacy: {
+        path: "/privacidad/",
+        title: "Política de privacidad",
+        noindex: true,
+        sections: [
+          {
+            heading: "Responsable",
+            items: [
+              `Responsable: ${OWNER.name}`,
+              `NIF: ${OWNER.taxId}`,
+              `Domicilio: ${OWNER.address}`,
+              `Correo electrónico: ${OWNER.email}`,
+            ],
+          },
+          {
+            heading: "Qué datos tratamos",
+            items: [
+              "Si usas el formulario de contacto: tu nombre y tu email y, si los indicas, tu empresa, el servicio que te interesa y el contexto que nos cuentes.",
+              "De cada visita: la dirección IP, la fecha y hora, la página pedida y el navegador, en los registros del servidor.",
+            ],
+          },
+          {
+            heading: "Para qué y con qué base",
+            items: [
+              "Responder a tu solicitud y, si nos lo pides, preparar una propuesta. La base es tu consentimiento (art. 6.1.a RGPD), que das al enviar el formulario y puedes retirar cuando quieras.",
+              "Mantener la web segura y en marcha: detectar abusos y ataques. La base es nuestro interés legítimo (art. 6.1.f RGPD).",
+            ],
+            paragraphs: [
+              "No usamos tus datos para publicidad, no hacemos perfiles y no tomamos decisiones automatizadas sobre ti.",
+            ],
+          },
+          {
+            heading: "Cuánto tiempo",
+            items: [
+              "Los del formulario: lo necesario para atender tu solicitud y, como máximo, 12 meses desde el último contacto. Si acordamos un encargo, lo que exija la ley.",
+              "Los registros del servidor: 30 días. Las copias de seguridad del sistema pueden conservarlos hasta 6 meses.",
+            ],
+          },
+          {
+            heading: "Quién más los trata",
+            items: [
+              "Cloudflare, Inc. sirve la web y la protege frente a ataques: las visitas pasan por su red. Puede tratar datos fuera de la Unión Europea, con las garantías del Marco de Privacidad de Datos UE-EE. UU. y cláusulas contractuales tipo.",
+              "Hetzner Online GmbH aloja nuestros servidores, en centros de datos de la Unión Europea.",
+            ],
+            paragraphs: ["No cedemos tus datos a nadie más, salvo obligación legal."],
+          },
+          {
+            heading: "Tus derechos",
+            paragraphs: [
+              `Puedes pedir el acceso, la rectificación, la supresión, la limitación o la portabilidad de tus datos, oponerte a su tratamiento y retirar tu consentimiento escribiendo a ${OWNER.email}, desde la dirección con la que nos contactaste.`,
+              "Si crees que no hemos tratado bien tus datos, puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).",
+            ],
+          },
+          {
+            heading: "Cookies",
+            paragraphs: ["Esta web no usa cookies. Los detalles, en la página de cookies."],
+          },
+        ],
+      },
+      cookies: {
+        path: "/cookies/",
+        title: "Cookies",
+        sections: [
+          {
+            paragraphs: [
+              "Esta web no instala cookies: ni propias ni de terceros, ni de análisis ni de publicidad. Por eso no te mostramos ningún aviso ni te pedimos consentimiento.",
+            ],
+          },
+          {
+            heading: "Lo único que guarda tu navegador",
+            paragraphs: [
+              "Si eliges el tema claro u oscuro, tu navegador guarda esa preferencia en su almacenamiento local (la clave offby1-theme) para recordarla en tu próxima visita. Solo se guarda si la eliges, nunca se envía a nuestro servidor y desaparece si vuelves a «Como el sistema» o borras los datos del sitio.",
+            ],
+          },
+          {
+            heading: "Si esto cambia",
+            paragraphs: [
+              "Si algún día usamos cookies, actualizaremos esta página y te pediremos permiso antes de instalar cualquiera que no sea estrictamente necesaria.",
+            ],
+          },
+        ],
+      },
       disclosure: {
         path: "/divulgacion-responsable/",
         title: "Divulgación responsable",
-        body: [
-          "Si has encontrado un fallo de seguridad en offby1.cc o en cualquier sistema nuestro, queremos saberlo.",
-          "Escríbenos a security@offby1.cc con lo que has visto y cómo reproducirlo. Te respondemos en menos de 3 días laborables y te contamos cómo vamos.",
-          "No pidas datos de otras personas, no degrades el servicio y danos un plazo razonable para corregirlo antes de publicarlo. Si lo haces así, no emprenderemos ninguna acción contra ti.",
+        sections: [
+          {
+            paragraphs: [
+              "Si has encontrado un fallo de seguridad en offby1.cc o en cualquier sistema nuestro, queremos saberlo.",
+              "Usa el formulario de contacto y elige «Informar de un fallo de seguridad». Cuéntanos qué has visto y cómo reproducirlo. Te respondemos en menos de 3 días laborables y te contamos cómo vamos.",
+              "No accedas a datos de otras personas, no degrades el servicio y danos un plazo razonable para corregirlo antes de publicarlo. Si lo haces así, no emprenderemos ninguna acción contra ti.",
+            ],
+          },
         ],
       },
     },

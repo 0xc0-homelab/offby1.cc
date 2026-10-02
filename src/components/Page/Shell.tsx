@@ -23,7 +23,7 @@ export function Shell({ content: c, page, children }: { content: Content; page?:
       </a>
       <NavBar links={links} cta={cta} lang={c.lang} langHrefs={paths(page)} homeHref={homeHref} sticky />
       <main id="main">{children}</main>
-      <Footer tagline={c.footer.tagline} email={c.footer.email} columns={footerColumns} legal={c.footer.legal} year={new Date().getFullYear()} />
+      <Footer tagline={c.footer.tagline} columns={footerColumns} legal={c.footer.legal} year={new Date().getFullYear()} />
     </>
   );
 }
