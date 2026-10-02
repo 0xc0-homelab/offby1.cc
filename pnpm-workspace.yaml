@@ -1,0 +1,4 @@
+# Its install script only downloads a fallback binary; the prebuilt binding
+# for the platform comes as an optional dependency.
+allowBuilds:
+  unrs-resolver: false

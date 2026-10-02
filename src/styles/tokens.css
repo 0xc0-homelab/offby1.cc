@@ -1,0 +1,88 @@
+/*
+ * offby1 design tokens, generated from the design system's tokens.json
+ * (claude.ai/artifact/KfETJAuPgCxKXv9s4sczkp). Dark is the brand theme and
+ * the default; light follows the visitor's preference. Edit the design
+ * system first, then regenerate: never a value here alone.
+ */
+
+:root {
+  color-scheme: dark;
+  --bg: #0c0d0f;
+  --surface: #15171a;
+  --surface-2: #1e2125;
+  --line: #2a2e33;
+  --line-strong: #6a717b;
+  --ink: #eceee8;
+  --ink-muted: #9aa1a9;
+  --signal: #c8ff4d;
+  --signal-ink: #c8ff4d;
+  --signal-soft: #1f2a0c;
+  --on-signal: #0c0d0f;
+  --action: var(--signal);
+  --on-action: #0c0d0f;
+  --focus: var(--signal-ink);
+  --link: var(--signal-ink);
+  --critical: #ff6b5e;
+  --high: #ff9d42;
+  --medium: #f0cf4f;
+  --low: #6fb0ff;
+  --danger: var(--critical);
+  --shadow-float: 0 16px 40px -12px #000000cc, 0 0 0 1px #2a2e33;
+  --focus-ring: 0 0 0 2px #0c0d0f, 0 0 0 4px #c8ff4d;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --container-max: 1200px;
+  --measure: 64ch;
+  --nav-height: 64px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f1;
+    --surface: #ffffff;
+    --surface-2: #e9ebe5;
+    --line: #d9dcd4;
+    --line-strong: #80877f;
+    --ink: #0c0d0f;
+    --ink-muted: #525960;
+    --signal: #9bd400;
+    --signal-ink: #4a6400;
+    --signal-soft: #eaf7cc;
+    --on-signal: #0c0d0f;
+    --action: var(--ink);
+    --on-action: #c8ff4d;
+    --critical: #c42a1d;
+    --high: #a84f00;
+    --medium: #806300;
+    --low: #1d5fc2;
+    --shadow-float: 0 16px 40px -12px #0c0d0f33, 0 0 0 1px #d9dcd4;
+    --focus-ring: 0 0 0 2px #f4f5f1, 0 0 0 4px #4a6400;
+  }
+}
+
+/* Type styles. Under 640px display-xl and display step down. */
+.display-xl { font-family: var(--font-sans); font-size: 72px; line-height: 76px; font-weight: 600; letter-spacing: -0.035em; }
+.display { font-family: var(--font-sans); font-size: 48px; line-height: 52px; font-weight: 600; letter-spacing: -0.025em; }
+.heading { font-family: var(--font-sans); font-size: 28px; line-height: 34px; font-weight: 600; letter-spacing: -0.015em; }
+.title { font-family: var(--font-sans); font-size: 20px; line-height: 28px; font-weight: 600; letter-spacing: -0.01em; }
+.body-lg { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 16px; line-height: 26px; font-weight: 400; }
+.small { font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 400; }
+.label { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+.code { font-family: var(--font-mono); font-size: 14px; line-height: 22px; font-weight: 400; }
+
+@media (max-width: 640px) {
+  .display-xl { font-size: 44px; line-height: 48px; }
+  .display { font-size: 34px; line-height: 38px; }
+}
