@@ -1,0 +1,17 @@
+.check { display: grid; grid-template-columns: 20px 1fr; column-gap: var(--space-3); row-gap: var(--space-2); align-items: start; }
+.box {
+  appearance: none; box-sizing: border-box; width: 20px; height: 20px; margin: 0; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); display: grid; place-content: center;
+}
+.box::after { content: ""; width: 10px; height: 10px; background: var(--on-signal); transform: scale(0); transition: transform 80ms ease-out; }
+.box:checked { background: var(--signal); border-color: var(--signal); }
+.box:checked::after { transform: scale(1); }
+.label { color: var(--ink-muted); cursor: pointer; }
+.label a { color: var(--link); }
+.error { grid-column: 2; margin: 0; display: flex; gap: var(--space-2); align-items: flex-start; color: var(--danger); }
+.errorIcon { margin-top: 2px; }
+.invalid .box { border-color: var(--danger); }
+
+@media (prefers-reduced-motion: reduce) {
+  .box::after { transition: none; }
+}

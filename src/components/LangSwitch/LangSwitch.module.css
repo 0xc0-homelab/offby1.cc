@@ -1,0 +1,8 @@
+.lang { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--ink-muted); }
+.sep { opacity: 0.6; }
+.opt {
+  padding: var(--space-1); color: var(--ink-muted); text-decoration: none;
+  border-radius: var(--radius-sm); border-bottom: 2px solid transparent;
+}
+.opt:hover { color: var(--ink); }
+.active { color: var(--ink); border-bottom-color: var(--signal); }

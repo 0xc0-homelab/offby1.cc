@@ -1,0 +1,30 @@
+@import "../styles/tokens.css";
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans);
+  font-size: 16px; line-height: 26px; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p { overflow-wrap: break-word; }
+a { color: var(--link); }
+::selection { background: var(--signal-soft); color: var(--ink); }
+
+/* One focus ring for every control: 2px of the page colour, 2px of focus. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid transparent; outline-offset: 2px; box-shadow: var(--focus-ring);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: var(--space-4); top: -100px; z-index: 20; padding: var(--space-2) var(--space-4);
+  background: var(--action); color: var(--on-action); border-radius: var(--radius-md); font-weight: 600; text-decoration: none;
+}
+.skip-link:focus-visible { top: var(--space-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

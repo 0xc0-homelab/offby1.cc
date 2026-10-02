@@ -1,0 +1,8 @@
+.badge {
+  display: inline-flex; align-items: center; gap: var(--space-1); height: 24px; padding: 0 var(--space-2);
+  font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  border: 1px solid transparent; border-radius: var(--radius-sm); white-space: nowrap;
+}
+.neutral { background: var(--surface-2); color: var(--ink-muted); }
+.signal { background: var(--signal-soft); color: var(--signal-ink); }
+.outline { border-color: var(--line-strong); color: var(--ink); }

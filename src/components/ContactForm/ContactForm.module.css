@@ -1,0 +1,15 @@
+.form { display: grid; gap: var(--space-6); }
+.row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
+.foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+.note { margin: 0; color: var(--ink-muted); }
+.trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.sent {
+  display: flex; gap: var(--space-3); align-items: flex-start; padding: var(--space-6);
+  background: var(--signal-soft); border-radius: var(--radius-md); color: var(--ink);
+}
+.sentIcon { color: var(--signal-ink); margin-top: 2px; }
+.sent p { margin: 0; }
+
+@media (max-width: 640px) {
+  .row { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,0 +1,6 @@
+# offby1 — how to report a security issue (RFC 9116).
+Contact: mailto:security@offby1.cc
+Expires: 2027-10-02T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://offby1.cc/.well-known/security.txt
+Policy: https://offby1.cc/divulgacion-responsable/
