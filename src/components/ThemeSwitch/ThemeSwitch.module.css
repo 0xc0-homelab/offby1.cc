@@ -1,0 +1,12 @@
+.switch { display: inline-flex; align-items: center; gap: var(--space-1); }
+.opt {
+  display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0;
+  background: none; border: 0; border-bottom: 2px solid transparent; border-radius: var(--radius-sm);
+  color: var(--ink-muted); cursor: pointer; transition: color 120ms ease-out;
+}
+.opt:hover { color: var(--ink); }
+.active { color: var(--ink); border-bottom-color: var(--signal); }
+
+@media (prefers-reduced-motion: reduce) {
+  .opt { transition: none; }
+}

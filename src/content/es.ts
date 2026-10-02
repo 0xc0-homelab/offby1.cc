@@ -17,6 +17,7 @@ export const es: Content = {
       { label: "Contacto", href: "#contacto" },
     ],
     cta: { label: "Solicitar auditoría", href: "#contacto" },
+    theme: { label: "Tema", system: "Como el sistema", light: "Claro", dark: "Oscuro" },
   },
   hero: {
     eyebrow: "Auditoría y consultoría de ciberseguridad",

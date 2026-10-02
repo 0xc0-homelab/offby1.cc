@@ -36,7 +36,11 @@ public/               favicon, .well-known/security.txt
 The components keep the design system's API (`index.d.ts`) and styles
 (`bundle.css`); the tokens are its `tokens.json`. A visual change starts in
 the design system and is ported here, never the other way round. Dark is the
-brand theme and the default; light follows the visitor's preference.
+brand theme and the default. The NavBar's theme switch offers system (the
+default: `prefers-color-scheme` decides), light and dark; a choice is kept in
+`localStorage` and set as `data-theme` on `<html>` by an inline script, with
+the CSP nonce, before the first paint. The sun, moon and monitor icons are
+Lucide's, kept apart (`Icon/extra-icons.ts`) until the design system has them.
 
 ## Content
 

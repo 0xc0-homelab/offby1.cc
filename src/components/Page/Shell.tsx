@@ -21,7 +21,7 @@ export function Shell({ content: c, page, children }: { content: Content; page?:
       <a href="#main" className="skip-link">
         {c.lang === "en" ? "Skip to content" : "Saltar al contenido"}
       </a>
-      <NavBar links={links} cta={cta} lang={c.lang} langHrefs={paths(page)} homeHref={homeHref} sticky />
+      <NavBar links={links} cta={cta} theme={c.nav.theme} lang={c.lang} langHrefs={paths(page)} homeHref={homeHref} sticky />
       <main id="main">{children}</main>
       <Footer tagline={c.footer.tagline} columns={footerColumns} legal={c.footer.legal} year={new Date().getFullYear()} />
     </>

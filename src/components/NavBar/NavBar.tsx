@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { cx } from "@/lib/cx";
-import type { Lang } from "@/content/types";
+import type { Content, Lang } from "@/content/types";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import { LangSwitch } from "../LangSwitch/LangSwitch";
 import { Logo } from "../Logo/Logo";
+import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import styles from "./NavBar.module.css";
 
 export interface LinkItem {
@@ -19,6 +20,7 @@ export interface NavBarProps {
   /** At most 5. */
   links: LinkItem[];
   cta?: { label: string; href: string };
+  theme: Content["nav"]["theme"];
   lang: Lang;
   langHrefs: Record<Lang, string>;
   sticky?: boolean;
@@ -27,7 +29,7 @@ export interface NavBarProps {
 }
 
 /** Site header: logo, section links, language switch, primary CTA; collapses under 860px. */
-export function NavBar({ links, cta, lang, langHrefs, sticky, homeHref = "/", className }: NavBarProps) {
+export function NavBar({ links, cta, theme, lang, langHrefs, sticky, homeHref = "/", className }: NavBarProps) {
   const [open, setOpen] = useState(false);
   const en = lang === "en";
 
@@ -52,6 +54,7 @@ export function NavBar({ links, cta, lang, langHrefs, sticky, homeHref = "/", cl
           ))}
         </nav>
         <div className={styles.end}>
+          <ThemeSwitch copy={theme} className={styles.themeBar} />
           <LangSwitch value={lang} hrefs={langHrefs} label={en ? "Language" : "Idioma"} />
           {cta ? (
             <Button href={cta.href} size="md" className={styles.cta}>
@@ -78,6 +81,10 @@ export function NavBar({ links, cta, lang, langHrefs, sticky, homeHref = "/", cl
               <Icon name="arrow-right" size={18} />
             </a>
           ))}
+          <div className={styles.themeRow}>
+            <span className="label">{theme.label}</span>
+            <ThemeSwitch copy={theme} />
+          </div>
           {cta ? (
             <Button href={cta.href} size="lg" icon="arrow-right" onClick={() => setOpen(false)}>
               {cta.label}

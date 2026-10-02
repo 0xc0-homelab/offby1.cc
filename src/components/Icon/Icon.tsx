@@ -1,9 +1,12 @@
 import { createElement } from "react";
 import { cx } from "@/lib/cx";
-import { ICONS, type IconName } from "./icons";
+import { EXTRA_ICONS } from "./extra-icons";
+import { ICONS } from "./icons";
 import styles from "./Icon.module.css";
 
-export type { IconName };
+const ALL = { ...ICONS, ...EXTRA_ICONS };
+
+export type IconName = keyof typeof ALL;
 
 export interface IconProps {
   name: IconName;
@@ -16,7 +19,7 @@ export interface IconProps {
 
 /** 24px Lucide line icon, stroke 1.5, inherits `color`. */
 export function Icon({ name, size = 20, strokeWidth = 1.5, label, className }: IconProps) {
-  const nodes = ICONS[name];
+  const nodes = ALL[name];
   const a11y = label ? { role: "img", "aria-label": label } : { "aria-hidden": true, focusable: false };
   return (
     <svg
