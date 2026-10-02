@@ -1,13 +1,14 @@
+import Link from "next/link";
 import { cx } from "@/lib/cx";
-import type { Link } from "@/content/types";
+import type { Link as LinkItem } from "@/content/types";
 import { Logo } from "../Logo/Logo";
 import styles from "./Footer.module.css";
 
 export interface FooterProps {
   tagline?: string;
   /** Up to 3; always one for Security (security.txt, responsible disclosure). */
-  columns: { title: string; links: Link[] }[];
-  legal: Link[];
+  columns: { title: string; links: LinkItem[] }[];
+  legal: LinkItem[];
   year: number;
   className?: string;
 }
@@ -27,9 +28,16 @@ export function Footer({ tagline, columns, legal, year, className }: FooterProps
             <ul className={styles.list}>
               {c.links.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className={cx(styles.link, "small")}>
-                    {l.label}
-                  </a>
+                  {/* A static file (security.txt) is a plain link; pages are client-side. */}
+                  {l.href.startsWith("/.well-known/") ? (
+                    <a href={l.href} className={cx(styles.link, "small")}>
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link href={l.href} className={cx(styles.link, "small")}>
+                      {l.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -41,9 +49,9 @@ export function Footer({ tagline, columns, legal, year, className }: FooterProps
         <ul className={styles.legal}>
           {legal.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className={cx(styles.legalLink, "small")}>
+              <Link href={l.href} className={cx(styles.legalLink, "small")}>
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

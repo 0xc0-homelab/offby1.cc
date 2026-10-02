@@ -20,8 +20,9 @@ pnpm start        # the standalone server, as the image runs it
 
 ```
 src/
-  app/(es)/           /, and the Spanish text pages; <html lang="es">
-  app/en/             /en/, and the English ones; <html lang="en">
+  app/layout.tsx      the one root layout; <html lang> from the path
+  app/(es)/           /, and the Spanish text pages
+  app/en/             /en/, and the English ones
   app/api/contact/    the contact form's endpoint
   app/healthz/        the probes'
   components/         the design system's components, ported 1:1 (TSX + CSS Modules)

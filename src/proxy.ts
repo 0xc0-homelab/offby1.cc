@@ -26,6 +26,9 @@ export function proxy(request: NextRequest) {
 
   const headers = new Headers(request.headers);
   headers.set("x-nonce", nonce);
+  // The page's language, for the root layout's <html lang>.
+  const path = request.nextUrl.pathname;
+  headers.set("x-lang", path === "/en" || path.startsWith("/en/") ? "en" : "es");
   headers.set("Content-Security-Policy", csp);
 
   const response = NextResponse.next({ request: { headers } });
