@@ -1,19 +1,26 @@
 import type { ReactNode } from "react";
 import { headers } from "next/headers";
 import { connection } from "next/server";
-import type { Lang } from "@/content/types";
+import { LangSync } from "@/components/LangSwitch/LangSync";
 import { ThemeSync } from "@/components/ThemeSwitch/ThemeSync";
 import { THEME_INIT } from "@/lib/theme";
 import { mono, sans } from "./fonts";
 import "./globals.css";
 
+export { viewport } from "./metadata";
+
 /**
- * The <html> both root layouts share, one per language. Rendered per request:
- * the Content-Security-Policy's nonce is fresh each time (src/proxy.ts).
+ * The one root layout, for both languages: moving between / and /en/ is a
+ * client-side navigation, not a full page load. The language comes from the
+ * path (x-lang, set by src/proxy.ts) on the first render, and LangSync keeps
+ * <html lang> right as the visitor navigates. Rendered per request: the
+ * Content-Security-Policy's nonce is fresh each time.
  */
-export async function RootHtml({ lang, children }: { lang: Lang; children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
   await connection();
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
+  const h = await headers();
+  const lang = h.get("x-lang") === "en" ? "en" : "es";
+  const nonce = h.get("x-nonce") ?? undefined;
   // data-theme is set by the inline script before React hydrates: it differs
   // from the server's markup on purpose.
   return (
@@ -24,6 +31,7 @@ export async function RootHtml({ lang, children }: { lang: Lang; children: React
       <body>
         {children}
         <ThemeSync />
+        <LangSync />
       </body>
     </html>
   );

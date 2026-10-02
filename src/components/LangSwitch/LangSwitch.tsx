@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Fragment } from "react";
 import { cx } from "@/lib/cx";
 import type { Lang } from "@/content/types";
@@ -10,7 +11,7 @@ const OPTIONS: { value: Lang; label: string; name: string }[] = [
 
 export interface LangSwitchProps {
   value: Lang;
-  /** One page per language: links, not client-side switching. */
+  /** One page per language, reached by a client-side navigation. */
   hrefs: Record<Lang, string>;
   label?: string;
   className?: string;
@@ -27,8 +28,10 @@ export function LangSwitch({ value, hrefs, label = "Idioma / Language", classNam
               /
             </span>
           ) : null}
-          <a
+          {/* Client-side, keeping the scroll: both languages lay out alike. */}
+          <Link
             href={hrefs[o.value]}
+            scroll={false}
             hrefLang={o.value}
             lang={o.value}
             title={o.name}
@@ -36,7 +39,7 @@ export function LangSwitch({ value, hrefs, label = "Idioma / Language", classNam
             className={cx(styles.opt, o.value === value && styles.active)}
           >
             {o.label}
-          </a>
+          </Link>
         </Fragment>
       ))}
     </div>
