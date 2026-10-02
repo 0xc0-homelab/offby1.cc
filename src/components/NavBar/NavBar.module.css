@@ -14,9 +14,10 @@
   width: 40px; height: 40px; align-items: center; justify-content: center; cursor: pointer;
 }
 .panel { display: none; }
+.themeRow { display: none; }
 
 @media (max-width: 860px) {
-  .links, .cta { display: none; }
+  .links, .cta, .themeBar { display: none; }
   .toggle { display: inline-flex; }
   .end { gap: var(--space-4); }
   .open .panel {
@@ -27,6 +28,10 @@
   .plink {
     display: flex; justify-content: space-between; align-items: center; padding: var(--space-4) 0;
     border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 20px; line-height: 28px; font-weight: 600;
+  }
+  .themeRow {
+    display: flex; justify-content: space-between; align-items: center; padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--line); color: var(--ink-muted);
   }
   .panel > a:last-child { margin-top: var(--space-4); }
 }

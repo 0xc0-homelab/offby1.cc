@@ -1,5 +1,5 @@
 import type { TerminalLine } from "@/components/Terminal/Terminal";
-import type { IconName } from "@/components/Icon/icons";
+import type { IconName } from "@/components/Icon/Icon";
 import type { ContactError } from "@/lib/contact";
 
 export type Lang = "es" | "en";
@@ -15,7 +15,7 @@ export interface Link {
 export interface Content {
   lang: Lang;
   meta: { title: string; description: string };
-  nav: { links: Link[]; cta: Link };
+  nav: { links: Link[]; cta: Link; theme: { label: string; system: string; light: string; dark: string } };
   hero: {
     eyebrow: string;
     title: [string, string];

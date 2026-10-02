@@ -1,7 +1,8 @@
 /*
  * offby1 design tokens, generated from the design system's tokens.json
  * (claude.ai/artifact/KfETJAuPgCxKXv9s4sczkp). Dark is the brand theme and
- * the default; light follows the visitor's preference. Edit the design
+ * the default; light follows the system, or the visitor's choice in the
+ * ThemeSwitch (data-theme on <html>). Edit the design
  * system first, then regenerate: never a value here alone.
  */
 
@@ -46,8 +47,9 @@
   --nav-height: 64px;
 }
 
+/* Light: the visitor's system preference, unless they chose dark... */
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme="dark"]) {
     color-scheme: light;
     --bg: #f4f5f1;
     --surface: #ffffff;
@@ -69,6 +71,30 @@
     --shadow-float: 0 16px 40px -12px #0c0d0f33, 0 0 0 1px #d9dcd4;
     --focus-ring: 0 0 0 2px #f4f5f1, 0 0 0 4px #4a6400;
   }
+}
+
+/* ...or their own choice, whatever the system says (ThemeSwitch). */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f5f1;
+  --surface: #ffffff;
+  --surface-2: #e9ebe5;
+  --line: #d9dcd4;
+  --line-strong: #80877f;
+  --ink: #0c0d0f;
+  --ink-muted: #525960;
+  --signal: #9bd400;
+  --signal-ink: #4a6400;
+  --signal-soft: #eaf7cc;
+  --on-signal: #0c0d0f;
+  --action: var(--ink);
+  --on-action: #c8ff4d;
+  --critical: #c42a1d;
+  --high: #a84f00;
+  --medium: #806300;
+  --low: #1d5fc2;
+  --shadow-float: 0 16px 40px -12px #0c0d0f33, 0 0 0 1px #d9dcd4;
+  --focus-ring: 0 0 0 2px #f4f5f1, 0 0 0 4px #4a6400;
 }
 
 /* Type styles. Under 640px display-xl and display step down. */
