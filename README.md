@@ -49,10 +49,11 @@ pending.
 ## Security headers
 
 The app sets only the Content-Security-Policy, with a fresh nonce per
-request (`src/proxy.ts`), so every page renders per request. The headers that
-are the same everywhere (HSTS, nosniff, Referrer-Policy, frame and
-permissions policies) are Traefik's, on the route (gitops,
-`apps/offby1-cc`).
+request (`src/proxy.ts`), so every page renders per request. The other
+headers are Traefik's, in gitops: the baseline on every entrypoint (HSTS,
+nosniff, Referrer-Policy: `platform/traefik/security-headers.yaml`) and this
+site's own on its route (framing, Permissions-Policy, COOP/CORP:
+`apps/offby1-cc/httproute.yaml`).
 
 ## Contact form
 
