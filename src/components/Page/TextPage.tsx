@@ -2,6 +2,7 @@ import { LEGAL_UPDATED } from "@/content/owner";
 import type { Content, PageKey } from "@/content/types";
 import { cx } from "@/lib/cx";
 import { Button } from "../Button/Button";
+import { RichText } from "../Email/RichText";
 import { SectionHeader } from "../SectionHeader/SectionHeader";
 import { Shell } from "./Shell";
 import styles from "./TextPage.module.css";
@@ -23,13 +24,15 @@ export function TextPage({ content: c, page }: { content: Content; page: PageKey
               {section.items ? (
                 <ul className={cx(styles.list, "body")}>
                   {section.items.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>
+                      <RichText text={item} />
+                    </li>
                   ))}
                 </ul>
               ) : null}
               {section.paragraphs?.map((para) => (
                 <p key={para} className={cx(styles.para, "body")}>
-                  {para}
+                  <RichText text={para} />
                 </p>
               ))}
             </section>

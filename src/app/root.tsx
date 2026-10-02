@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { headers } from "next/headers";
 import { connection } from "next/server";
 import type { Lang } from "@/content/types";
+import { ThemeSync } from "@/components/ThemeSwitch/ThemeSync";
 import { THEME_INIT } from "@/lib/theme";
 import { mono, sans } from "./fonts";
 import "./globals.css";
@@ -20,7 +21,10 @@ export async function RootHtml({ lang, children }: { lang: Lang; children: React
       <head>
         <script nonce={nonce} dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ThemeSync />
+      </body>
     </html>
   );
 }

@@ -56,7 +56,10 @@ The site sets no cookies; the cookies page says so.
 ## Security headers
 
 The app sets only the Content-Security-Policy, with a fresh nonce per
-request (`src/proxy.ts`), so every page renders per request. The other
+request (`src/proxy.ts`), so every page renders per request. Scripts run
+with that nonce or from this origin, which lets Cloudflare's own scripts under
+`/cdn-cgi/` run: Email Obfuscation stays on, and addresses are rendered so
+React doesn't hydrate them (`components/Email/RichText.tsx`). The other
 headers are Traefik's, in gitops: the baseline on every entrypoint (HSTS,
 nosniff, Referrer-Policy: `platform/traefik/security-headers.yaml`) and this
 site's own on its route (framing, Permissions-Policy, COOP/CORP:
