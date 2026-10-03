@@ -4,6 +4,7 @@ import { connection } from "next/server";
 import { LangSync } from "@/components/LangSwitch/LangSync";
 import { Rum } from "@/components/Rum/Rum";
 import { ThemeSync } from "@/components/ThemeSwitch/ThemeSync";
+import { LANG_INIT } from "@/lib/lang";
 import { THEME_INIT } from "@/lib/theme";
 import { mono, sans } from "./fonts";
 import "./globals.css";
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang={lang} className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script nonce={nonce} dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: LANG_INIT }} />
       </head>
       <body>
         {children}

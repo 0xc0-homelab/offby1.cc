@@ -270,6 +270,7 @@ export const en: Content = {
             heading: "The one thing your browser keeps",
             paragraphs: [
               "If you choose the light or dark theme, your browser keeps that preference in its local storage (the key offby1-theme) to remember it next time. It's only stored if you choose it, it's never sent to our server, and it goes away if you switch back to “Match the system” or clear the site's data.",
+              "If you choose a language on the ES / EN switch, your browser keeps that choice in its local storage (the key offby1-lang). Without it, on your first visit we show the site in your device's language: Spanish if it is Spanish, Catalan, Galician or Basque, and English otherwise. Your own browser makes that decision, it's never sent to our server, and it goes away if you clear the site's data.",
             ],
           },
           {
