@@ -166,6 +166,9 @@ importers:
 
   .:
     dependencies:
+      '@openobserve/browser-rum':
+        specifier: 0.4.3
+        version: 0.4.3
       '@opentelemetry/api':
         specifier: 1.9.1
         version: 1.9.1
@@ -622,6 +625,23 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@openobserve/browser-core@0.4.3':
+    resolution: {integrity: sha512-kfe+SWEs9YlhpmdTBAgNyMOurvUlLkghIlUwUhkWaJ+xqTAEcS862tN7awm+QnTsAVzA5QObpfjVfb7j5UdB0w==}
+
+  '@openobserve/browser-rum-core@0.4.3':
+    resolution: {integrity: sha512-nLeG/1VWZrqWNw3DVTg1TnH8Q/8R8rWaK5jghzl8/H9q+l+k0eH99DUoDNRWqEj6vkkrbnuQsobn+VWWzyNEwg==}
+
+  '@openobserve/browser-rum@0.4.3':
+    resolution: {integrity: sha512-aRhI0SWJ0VFLduHaRQG0WSjOpXfxm2QatIx20MlRgefykds+s1jhMr0jbNyHmhSofiNgoml/DZ0nep8e6l8Ntw==}
+    peerDependencies:
+      '@openobserve/browser-logs': 0.4.3
+    peerDependenciesMeta:
+      '@openobserve/browser-logs':
+        optional: true
+
+  '@openobserve/js-core@0.4.3':
+    resolution: {integrity: sha512-TLxcxYzbkmyM+2YCiS6KvAP769HZxBRwhsvTvHD9EqLLgq0wEkQ7sc9ZS55JXM5sZGK/84EAy8CPz/EfMpIdCw==}
 
   '@opentelemetry/api-logs@0.222.0':
     resolution: {integrity: sha512-9mb1If+IF6u0ZVXkHQ6ogEae5HwA6ajIVUgpSDQyRASxft6BSXHvBvPooRle3yFN/fKnCdSOnuu0OC3PLcF6+g==}
@@ -2441,6 +2461,23 @@ snapshots:
       fastq: 1.20.3
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@openobserve/browser-core@0.4.3':
+    dependencies:
+      '@openobserve/js-core': 0.4.3
+
+  '@openobserve/browser-rum-core@0.4.3':
+    dependencies:
+      '@openobserve/browser-core': 0.4.3
+      '@openobserve/js-core': 0.4.3
+
+  '@openobserve/browser-rum@0.4.3':
+    dependencies:
+      '@openobserve/browser-core': 0.4.3
+      '@openobserve/browser-rum-core': 0.4.3
+      '@openobserve/js-core': 0.4.3
+
+  '@openobserve/js-core@0.4.3': {}
 
   '@opentelemetry/api-logs@0.222.0':
     dependencies:
