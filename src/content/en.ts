@@ -217,6 +217,7 @@ export const en: Content = {
             items: [
               "If you use the contact form: your name and email and, if you give them, your company, the service you're interested in and the context you share.",
               "For every visit: the IP address, date and time, page requested and browser, in the server's logs.",
+              "For every visit, also how the site performs in your browser: load times, errors, slow resources, clicks, your device and browser type, and an approximate location (country and city) derived from the IP. Nothing is stored on your device for this, and we don't identify you.",
             ],
           },
           {
@@ -224,6 +225,7 @@ export const en: Content = {
             items: [
               "To answer your request and, if you ask, prepare a proposal. The basis is your consent (art. 6(1)(a) GDPR), given when you send the form, which you can withdraw at any time.",
               "To keep the site secure and running: detecting abuse and attacks. The basis is our legitimate interest (art. 6(1)(f) GDPR).",
+              "To measure and improve the site's performance and fix its errors. The basis is our legitimate interest (art. 6(1)(f) GDPR).",
             ],
             paragraphs: [
               "We don't use your data for advertising, we don't build profiles, and we don't make automated decisions about you.",
@@ -233,7 +235,7 @@ export const en: Content = {
             heading: "How long",
             items: [
               "Form data: as long as needed to handle your request, and at most 12 months after our last contact. If we agree an engagement, as long as the law requires.",
-              "Server logs: 30 days. System backups may keep them for up to 6 months.",
+              "Server logs and performance measurements: 30 days. System backups may keep them for up to 6 months.",
             ],
           },
           {

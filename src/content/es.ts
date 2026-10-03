@@ -217,6 +217,7 @@ export const es: Content = {
             items: [
               "Si usas el formulario de contacto: tu nombre, tu email y, si los indicas, tu empresa, el servicio que te interesa y el contexto que nos cuentes.",
               "De cada visita: la dirección IP, la fecha y hora, la página pedida y el navegador, en los registros del servidor.",
+              "De cada visita, también cómo funciona la web en tu navegador: tiempos de carga, errores, recursos lentos, clics, el tipo de dispositivo y navegador, y una ubicación aproximada (país y ciudad) deducida de la IP. No guardamos nada en tu dispositivo para ello y no te identificamos.",
             ],
           },
           {
@@ -224,6 +225,7 @@ export const es: Content = {
             items: [
               "Responder a tu solicitud y, si nos lo pides, preparar una propuesta. La base es tu consentimiento (art. 6.1.a RGPD), que das al enviar el formulario y puedes retirar cuando quieras.",
               "Mantener la web segura y en marcha: detectar abusos y ataques. La base es nuestro interés legítimo (art. 6.1.f RGPD).",
+              "Medir y mejorar el rendimiento de la web y corregir sus errores. La base es nuestro interés legítimo (art. 6.1.f RGPD).",
             ],
             paragraphs: [
               "No usamos tus datos para publicidad, no hacemos perfiles y no tomamos decisiones automatizadas sobre ti.",
@@ -233,7 +235,7 @@ export const es: Content = {
             heading: "Cuánto tiempo",
             items: [
               "Los del formulario: lo necesario para atender tu solicitud y, como máximo, 12 meses desde el último contacto. Si acordamos un encargo, lo que exija la ley.",
-              "Los registros del servidor: 30 días. Las copias de seguridad del sistema pueden conservarlos hasta 6 meses.",
+              "Los registros del servidor y las medidas de rendimiento: 30 días. Las copias de seguridad del sistema pueden conservarlos hasta 6 meses.",
             ],
           },
           {
