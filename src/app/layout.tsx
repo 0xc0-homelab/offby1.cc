@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { headers } from "next/headers";
 import { connection } from "next/server";
 import { LangSync } from "@/components/LangSwitch/LangSync";
+import { Rum } from "@/components/Rum/Rum";
 import { ThemeSync } from "@/components/ThemeSwitch/ThemeSync";
 import { THEME_INIT } from "@/lib/theme";
 import { mono, sans } from "./fonts";
@@ -32,6 +33,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         {children}
         <ThemeSync />
         <LangSync />
+        {/* OpenObserve's RUM client token, from Vault through the cluster
+            (gitops, apps/offby1-cc): public by design, read per request. */}
+        <Rum clientToken={process.env.OPENOBSERVE_RUM_CLIENT_TOKEN} />
       </body>
     </html>
   );
