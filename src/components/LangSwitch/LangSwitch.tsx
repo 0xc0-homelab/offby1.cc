@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { Fragment } from "react";
 import { cx } from "@/lib/cx";
+import { storeLang } from "@/lib/lang";
 import type { Lang } from "@/content/types";
 import styles from "./LangSwitch.module.css";
 
@@ -17,7 +20,10 @@ export interface LangSwitchProps {
   className?: string;
 }
 
-/** ES / EN switch in mono; the active one carries a signal underline. */
+/**
+ * ES / EN switch in mono; the active one carries a signal underline. A click
+ * is remembered (lib/lang.ts): it outranks the device's language next time.
+ */
 export function LangSwitch({ value, hrefs, label = "Idioma / Language", className }: LangSwitchProps) {
   return (
     <div className={cx(styles.lang, "label", className)} role="group" aria-label={label}>
@@ -32,6 +38,7 @@ export function LangSwitch({ value, hrefs, label = "Idioma / Language", classNam
           <Link
             href={hrefs[o.value]}
             scroll={false}
+            onClick={() => storeLang(o.value)}
             hrefLang={o.value}
             lang={o.value}
             title={o.name}

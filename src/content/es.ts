@@ -270,6 +270,7 @@ export const es: Content = {
             heading: "Lo único que guarda tu navegador",
             paragraphs: [
               "Si eliges el tema claro u oscuro, tu navegador guarda esa preferencia en su almacenamiento local (la clave offby1-theme) para recordarla en tu próxima visita. Solo se guarda si la eliges, nunca se envía a nuestro servidor y desaparece si vuelves a «Según el sistema» o borras los datos del sitio.",
+              "Si eliges idioma con el selector ES / EN, tu navegador guarda esa elección en su almacenamiento local (la clave offby1-lang). Sin ella, la primera vez que entras te mostramos la web en el idioma de tu dispositivo: en español si es español, catalán, gallego o euskera, y en inglés en cualquier otro caso. Esa decisión la toma tu propio navegador, nunca se envía a nuestro servidor y desaparece si borras los datos del sitio.",
             ],
           },
           {
